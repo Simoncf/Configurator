@@ -1,0 +1,40 @@
+﻿@model Configurator.ViewModels.OrdersViewModel
+
+@{
+    ViewBag.Title = "MyOrders";
+}
+
+<h2>MyOrders</h2>
+@foreach (var o in Model.UsersOrders)
+{
+    <div>
+        <span>@o.ProductCode -  @o.DeliverDate</span> <input type="button" value="Show Picture"/>
+
+    </div>
+}
+<div id="imgDiv">
+   
+</div>    
+
+<script>
+    $('input').click(function () {
+        var code = $(this).siblings('span').text().substr(0, $(this).siblings('span').text().indexOf(' -'));
+        console.log(code);
+        $.ajax({
+            url: "/Configurator/GetImgPath",
+            type: "Get",
+            data: { 'code': code },
+            contentType: "application/json",
+            success: function (result) {
+                var imageDiv = '<div>';
+                imageDiv += '<div style="z-index: 10; position: absolute; top: 4px; left: 10px;">';
+                imageDiv += '<a onclick="afficherImage(' + fileName + ')" >Supprimer</a>';
+                imageDiv += '</div>';
+                imageDiv += '<img style="width:100%; height:500px" u=image src="' + filePath + '/' + fileName + '" />';
+                imageDiv += '</div>';
+                // Adding Image To the Div 
+                $('#HotelJustifS').append(imageDiv);
+            }
+        })
+    })
+</script>

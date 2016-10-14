@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="440f520cd347415a855f7e98a13dc305" Name="Diagram1">
+        <EntityTypeShape EntityType="ProductConfiguratorModel.Item" Width="1.5" PointX="7.5" PointY="1" />
+        <EntityTypeShape EntityType="ProductConfiguratorModel.ItemType" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="ProductConfiguratorModel.Order" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="ProductConfiguratorModel.Part" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="ProductConfiguratorModel.Product" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="ProductConfiguratorModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ProductConfiguratorModel.User" Width="1.5" PointX="0.75" PointY="5" />
+        <AssociationConnector Association="ProductConfiguratorModel.FK_Item_ItemType" />
+        <AssociationConnector Association="ProductConfiguratorModel.FK_ItemType_Part" />
+        <AssociationConnector Association="ProductConfiguratorModel.FK_Order_User" />
+        <AssociationConnector Association="ProductConfiguratorModel.FK_Part_Product" />
+        <EntityTypeShape EntityType="ProductConfiguratorModel.FinalDesign" Width="1.5" PointX="5.375" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
